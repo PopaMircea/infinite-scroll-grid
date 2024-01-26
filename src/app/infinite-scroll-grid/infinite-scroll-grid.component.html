@@ -1,7 +1,6 @@
 <div class="container">
   <ng-container *ngFor="let pages of (pages$$.asObservable() | async)">
     <div *ngFor="let image of pages.images; let last = last" class="masonry-item">
-      {{pages.pageNumber}}
       <img [ngSrc]="image.urls.regular" [alt]="image.alt_description"
            class="image"
            matTooltip="{{image.description || image.alt_description}}"

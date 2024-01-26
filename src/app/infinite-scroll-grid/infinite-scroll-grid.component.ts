@@ -117,7 +117,6 @@ export class InfiniteScrollGridComponent implements OnInit {
     this.imageService.getImages(this.page).subscribe(newImages => {
       const currentValue = this.pages$$.getValue();
       this.latestBatch = {pageNumber: this.page, images: newImages}
-      console.log(document.body.offsetHeight)
       currentValue.splice(1, 1);
       this.pages$$.next([this.latestBatch, ...currentValue])
     })
