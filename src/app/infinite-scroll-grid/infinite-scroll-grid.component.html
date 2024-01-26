@@ -1,0 +1,24 @@
+<div class="container">
+  <ng-container *ngFor="let pages of (pages$$.asObservable() | async)">
+    <div *ngFor="let image of pages.images; let last = last" class="masonry-item">
+      {{pages.pageNumber}}
+      <img [ngSrc]="image.urls.regular" [alt]="image.alt_description"
+           class="image"
+           matTooltip="{{image.description || image.alt_description}}"
+           [width]="image.width" [height]="image.height"
+           [ngClass]="{'loaded': image.loaded}"
+           priority
+           (load)="setLoaded(image,last)"/>
+      <div [ngClass]="{'loaded': image.loaded}" class="likes" matTooltip="{{image.likes}}">
+        <mat-icon>favorite</mat-icon>
+        <p>{{image.likes}}</p>
+      </div>
+      <div class="button-div" [ngClass]="{'loaded': image.loaded}">
+        <button (click)="downloadImage(image)" mat-fab extended color="primary" *ngIf="image.loaded">
+          <mat-icon>download</mat-icon>
+          Download
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

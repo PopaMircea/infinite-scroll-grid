@@ -1,0 +1,87 @@
+body {
+  background-color: #000;
+  font: 1.1em Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+img.loaded,
+div.loaded{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button.loaded{
+  opacity: 1;
+  transition: opacity 3s;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows:15px ;
+  grid-column-gap: 15px;
+
+}
+.masonry-item{
+  margin: 0;
+  //display: grid;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  //grid-auto-flow: dense;
+}
+
+.masonry-item > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+.button-div{
+  opacity: 0;
+}
+button{
+  height: 30px;
+  width: fit-content;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.button-div.loaded{
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.likes{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  bottom: 44px;
+  color: red;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  mat-icon{
+    font-size: 17px;
+    height: 15px;
+    width: 15px;
+  }
+  p{
+    font-size: 17px;
+    margin: 0;
+  }
+}
