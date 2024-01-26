@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {InfiniteScrollGridComponent} from "./infinite-scroll-grid/infinite-scroll-grid.component";
 
 const routes: Routes = [
-  {path: '', component: InfiniteScrollGridComponent}
+  {path: '**', component: InfiniteScrollGridComponent}
 ];
 
 @NgModule({
