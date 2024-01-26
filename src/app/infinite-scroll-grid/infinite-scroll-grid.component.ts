@@ -48,7 +48,6 @@ export class InfiniteScrollGridComponent implements OnInit {
       this.loadImages();
     }
 
-    // Scroll up
     if (scrollPosition === 0 && this.page > 1) {
       this.page--;
       this.loadPreviousPage();

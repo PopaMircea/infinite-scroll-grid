@@ -38,12 +38,10 @@ img {
 }
 .masonry-item{
   margin: 0;
-  //display: grid;
   position: relative;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  //grid-auto-flow: dense;
 }
 
 .masonry-item > img {
